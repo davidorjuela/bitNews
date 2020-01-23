@@ -20,23 +20,23 @@ Apoyanos con tus visitas y comentarios en nuestras redes sociales para seguir av
 
 <div class="container">
   <h2>Crea una cuenta</h2>
-  <form class="form-horizontal" action="registrar-usuario.php" method="post">
+  <form class="form-horizontal" action="./../registrar.php" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Usuario</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" maxlength="20" placeholder="Ingresa tu usuario" name="username" required>
+        <input type="text" class="form-control" maxlength="20" placeholder="Ingresa tu usuario" name="user[nombre]" required>
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Email:</label>
       <div class="col-sm-10">
-        <input type="email" class="form-control" maxlength="50" id="email" placeholder="Enter email" name="email">
+        <input type="email" class="form-control" maxlength="50" id="email" placeholder="Enter email" name="user[correo]">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Contraseña:</label>
       <div class="col-sm-10">          
-        <input type="password" class="form-control" maxlength="30" id="pwd" placeholder="Ingresa una Contraseña" name="password" required>
+        <input type="password" class="form-control" maxlength="30" id="pwd" placeholder="Ingresa una Contraseña" name="user[contrasena]" required>
       </div>
     </div>
     <div class="form-group">        

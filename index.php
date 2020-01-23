@@ -51,11 +51,11 @@
       <div>
         <a href="index.html"><img class="textLogo" src="Imagenes/img2.png" alt=""></a>
         <div class="anclas">
-          <li><a href="#registro">Registro</a></li>
           <?php if($sesion){
             echo '<li><a href="Usuarios/logout.php">Logout</a></li>';
           }else{
-              echo '<li><a href="Usuarios/login.html">Login</a></li>';
+              echo '<li><a href="Usuarios/Vistas/registrar.php">Registro</a></li>';
+              echo '<li><a href="Usuarios/Vistas/login.php">Login</a></li>';
             //echo '<li><a data-toggle="modal" data-target="#ventanaModal">Login</a></li>';
           }?>
           <li><a href="#contacto">Contacto</a></li>

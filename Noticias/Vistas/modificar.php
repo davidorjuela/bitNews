@@ -29,7 +29,8 @@
             <input type="text" name="noticia[titulo]" value="<?php echo $noticia[0][1]; ?>">
         </div>
         <div class="form-group">
-            <label for="imagen">Imagen:</label>
+            <label for="imagen">Imagen:</label><br>
+            <img src="./../Imagenes/<?php echo $noticia[0][2];?>" width="250"/><br>
             <input type="file" name="imagen" accept="image/*">
         </div>
         <div class="form-group">
@@ -48,10 +49,6 @@
             <label for="noticia[fecha]">Fecha:</label>
             <input type="date" name="noticia[fecha]" value="<?php echo $noticia[0][6]; ?>">
         </div>
-        <div class="form-group">
-                <label for="noticia[user]">user:</label>
-                <input type="text" name="noticia[user]" value="<?php echo $noticia[0][7]; ?>">
-            </div>
         <button type="submit">Guardar</button>  
         <!-- <input type="hidden" value="Usuario"  id="pageOperation"   name="pageOperation"/>
         <input type="submit" value="Cancelar" id="evento_cancelar" name="evento_cancelar"/>

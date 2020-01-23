@@ -9,7 +9,7 @@
     //Crear variable que se encargara de manipular y contener el resultado
     $noticia = mysqli_fetch_all($resultado);
 
-    $sql = "SELECT nombre FROM noticias, usuarios WHERE usuarios.id=noticias.id_Usuario";
+    $sql = "SELECT nombre FROM usuarios, noticias WHERE noticias.id=$id AND usuarios.id=noticias.id_Usuario";
     $resultado =mysqli_query($conexion,$sql);
     //Crear variable que se encargara de manipular y contener el resultado
     $nombres = mysqli_fetch_all($resultado);
