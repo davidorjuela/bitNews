@@ -1,5 +1,5 @@
  <?php
-    require('../conexion.php');
+    require('./../../conexion.php');
 
     //Seleccionamos todos los datos de la tabla videojuegos
     $id=$_GET['id'];
@@ -22,7 +22,7 @@
 </head>
 <body class="flexColumn jCCenter aICenter">
     <h1>Editar "<?php echo $noticia[0][1] ?>"</h1>
-    <form action="modificar.php" method="POST" enctype="multipart/form-data">
+    <form action="./../modificar.php" method="POST" enctype="multipart/form-data">
         <input type="text" name="noticia[id]" value="<?php echo $noticia[0][0]; ?>" style="display:none">
         <div class="form-group">
             <label for="noticia[titulo]">Titulo:</label> 

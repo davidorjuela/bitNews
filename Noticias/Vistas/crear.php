@@ -1,5 +1,5 @@
 <?php
-    require('../conexion.php');
+    require('./../../conexion.php');
 
     //Seleccionamos todos los datos de la tabla videojuegos
     $sql = "SELECT * FROM noticias";
@@ -41,7 +41,7 @@
     <?php if($sesion){echo  "<h3>Bienvenido ".$_SESSION['username']."</h3>";}?>
     <div class="form flexColumn jCCenter aICenter">
         <h2>Agregar nueva noticia</h2>
-        <form method="POST" action="crear.php" enctype="multipart/form-data">
+        <form method="POST" action="./../crear.php" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="noticia[titulo]">Titulo:</label> 
                 <input type="text" name="noticia[titulo]">

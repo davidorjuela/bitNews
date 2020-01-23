@@ -52,7 +52,12 @@
         <a href="index.html"><img class="textLogo" src="Imagenes/img2.png" alt=""></a>
         <div class="anclas">
           <li><a href="#registro">Registro</a></li>
-          <li><a data-toggle="modal" data-target="#ventanaModal">Login</a></li>
+          <?php if($sesion){
+            echo '<li><a href="Usuarios/logout.php">Logout</a></li>';
+          }else{
+              echo '<li><a href="Usuarios/login.html">Login</a></li>';
+            //echo '<li><a data-toggle="modal" data-target="#ventanaModal">Login</a></li>';
+          }?>
           <li><a href="#contacto">Contacto</a></li>
         </div>
       </div>
@@ -109,7 +114,7 @@
 
   <!-- Botón agregar noticias-ADMIN -->
   <!-- <a id="agregar" class="btn btn-primary" href="#" role="button" style="display: flex; justify-content: space-between;"><i class="fas fa-plus-circle"></i></a> -->
-  <?php if($sesion){echo '<a id="agregar" class="btn btn-primary" href="Noticias/crearVista.php" role="button" style="display: flex; justify-content: space-between;"><i class="fas fa-plus-circle"></i></a>';}?>
+  <?php if($sesion){echo '<a id="agregar" class="btn btn-primary" href="Noticias/Vistas/crear.php" role="button" style="display: flex; justify-content: space-between;"><i class="fas fa-plus-circle"></i></a>';}?>
   <!-- Modal Login -->
   <div class="modal fade" id="ventanaModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana"
     aria-hidden="true">
@@ -131,14 +136,14 @@
           <img class="imagen-login" src="Imagenes/fodo-login.jpeg" alt="fondo-login">
           <img class="logo-login" src="Imagenes/logoW.png" alt="logo"></h4>
 
-          <form>
+          <form action="Usuarios/checklogin.php" method="post">
             <div class="form-group">
               <label id="letralabel" for="recipient-name" class="col-form-label">CORREO :</label>
-              <input type="email" id="idmail">
+              <input type="email" id="idmail" name="correo">
             </div>
             <div class="form-group">
               <label id="letralabel" for="message-text" class="col-form-label">CONTRASEÑA:</label>
-              <input id="idpassword" type="password"></input>
+              <input id="idpassword" type="password" name="contrasena"></input>
             </div>
             <div id="botonregistrar" class="form-group">
               <button id="botonAceptar" data-dismiss="modal">SING IN</button>
@@ -179,7 +184,7 @@
         <div class="contNews">
           <a  data-toggle="modal" data-target="#exampleModalLong">
             <div class = "imgNew">
-            <img src="Noticias/Imagenes/<?php echo $noticia[2];?>">
+            <img src="./Noticias/Imagenes/<?php echo $noticia[2];?>">
             </div>
             <div class="textNew">
               <h5 class= "tituloNew"><?php echo $noticia[1]; ?></h5>
@@ -191,7 +196,8 @@
           </a>  
           <div class = "elimEditar">
             <?php if($sesion){echo '<a id="eliminar" class="btn btn-primary" href="Noticias/eliminar.php?id='.$noticia[0].' role="button"><i class="far fa-trash-alt"></i></a>';}?>
-            <?php if($sesion){echo '<a id="editar" class="btn btn-primary" href="Noticias/modificarVista.php?id='.$noticia[0].' role="button"><i class="far fa-edit"></i></a>';}?>
+            <?php if($sesion){echo '<a id="editar" class="btn btn-primary" href="Noticias/Vistas/modificar.php?id='.$noticia[0].' role="button"><i class="far fa-edit"></i></a>';}?>
+            <a id="ver" class="btn btn-primary" href="Noticias/Vistas/mostrar.php?id=<?php echo $noticia[0]; ?>" role="button"><i class="fa fa-binoculars"></i></a>
           </div>
         </div>         
       <?php endforeach; ?>

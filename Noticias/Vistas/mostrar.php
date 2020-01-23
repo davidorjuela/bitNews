@@ -1,12 +1,13 @@
 <?php
-    require('../conexion.php');
+    require('./../../conexion.php');
 
     //Seleccionamos todos los datos de la tabla videojuegos
-    $sql = "SELECT * FROM noticias";
+    $id=$_GET['id'];
+    $sql = "SELECT * FROM noticias WHERE id='$id'";
     //Crear una varialbe que guarde los datos de la consulta
     $resultado =mysqli_query($conexion,$sql);
     //Crear variable que se encargara de manipular y contener el resultado
-    $noticias = mysqli_fetch_all($resultado);
+    $noticia = mysqli_fetch_all($resultado);
 
     $sql = "SELECT nombre FROM noticias, usuarios WHERE usuarios.id=noticias.id_Usuario";
     $resultado =mysqli_query($conexion,$sql);
@@ -39,32 +40,47 @@
     <?php if($sesion){echo  "<h3>Bienvenido ".$_SESSION['username']."</h3>";}?>
     <table>
         <tr>
-            <th>ID</th>
-            <th>TITULO</th>
-            <th>IMAGEN</th>
-            <th>CONTENIDO</th>
-            <th>FUENTE</th>
-            <th>URL</th>
-            <th>FECHA</th>
-            <th>EDITADO</th>
-            <th>RESPONSABLE</th>
+            <th>LLAVE</th>
+            <th>VALOR</th>
         </tr>
-   
-    <?php foreach($noticias as $key=>$noticia): ?>
         <tr>
-            <td><?php echo $noticia[0]; ?></td>
-            <td><?php echo $noticia[1]; ?></td>
-            <td><img src="Noticias/Imagenes/<?php echo $noticia[2];?>" width="250"/></td>
-            <td><?php echo $noticia[3]; ?></td>
-            <td><?php echo $noticia[4]; ?></td>
-            <td><?php echo $noticia[5]; ?></td>
-            <td><?php echo $noticia[6]; ?></td>
-            <td><?php echo $noticia[8]; ?></td>
-            <td><?php echo $nombres[$key][0]; ?></td>
-            <?php if($sesion){echo '<td><a href="eliminar.php?id='.$noticia[0].'">X</a></td>';}?>
-            <?php if($sesion){echo '<td><a href="modificarVista.php?id='.$noticia[0].'">Edit</a></td>';}?>
+            <td>ID:</td>
+            <td><?php echo $noticia[0][0]; ?></td>
         </tr>
-    <?php endforeach; ?>
+        <tr>
+            <td>Titulo:</td>
+            <td><?php echo $noticia[0][1]; ?></td>
+        </tr>
+        <tr>
+            <td>Imagen:</td>
+            <td><img src="./../Imagenes/<?php echo $noticia[0][2];?>" width="250"/></td>
+        </tr>
+        <tr>
+            <td>Contenido:</td>
+            <td><?php echo $noticia[0][3]; ?></td>
+        </tr>
+        <tr>
+            <td>Fuente:</td>
+            <td><?php echo $noticia[0][4]; ?></td>
+        </tr>
+        <tr>
+            <td>URL:</td>
+            <td><?php echo $noticia[0][5]; ?></td>
+        </tr>
+        <tr>
+            <td>Fecha:</td>
+            <td><?php echo $noticia[0][6]; ?></td>
+        </tr> 
+        <tr>
+            <td>Editado por:</td>
+            <td><?php echo $nombres[0][0]; ?></td>
+        </tr>  
+        <tr>
+            <td>Ultima modificación:</td>
+            <td><?php echo $noticia[0][8]; ?></td>
+        </tr>      
+        <!-- <?php if($sesion){echo '<td><a href="eliminar.php?id='.$noticia[0][0].'">X</a></td>';}?>
+        <?php if($sesion){echo '<td><a href="modificarVista.php?id='.$noticia[0][0].'">Edit</a></td>';}?> -->
     </table>
 </body>
 </html>

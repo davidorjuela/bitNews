@@ -33,7 +33,7 @@ if ($contrasena==$row['contrasena']) {
     $_SESSION['user_ID'] = $row['id'];
 
     echo "Bienvenido! " . $_SESSION['username'];
-    header('Location: mostrar.php');//redirecciona a la pagina del usuario
+    header('Location: ./../index.php');//redirecciona a la pagina del usuario
 
  } else { 
    echo "Username o Password estan incorrectos.";
