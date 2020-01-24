@@ -11,18 +11,45 @@
 
     session_start();
     $ID_Usuario=$_SESSION['user_ID'];
-    // Ruta donde se guardarán las imágenes que subamos
-    $directorio = $_SERVER['DOCUMENT_ROOT'].'/Proyectos/bitNews/Noticias/Imagenes/';
-    // Muevo la imagen desde el directorio temporal a nuestra ruta indicada anteriormente
-    move_uploaded_file($_FILES['imagen']['tmp_name'],$directorio.$imagen);
 
-    $sql="INSERT INTO noticias (titulo,imagen,contenido,fuente,urlN,fecha,ID_Usuario)
-    VALUES ('$noticia[titulo]','$imagen','$noticia[contenido]','$noticia[fuente]','$noticia[urlN]','$fecha','$ID_Usuario')";
+
+    $msgerror = "";
+
+    if (empty($noticia['titulo'])){
+        $msgerror =  $msgerror . "Titulo NO puede estar en Blanco <br>";
+    }
+    if (empty($noticia['contenido'])){
+        $msgerror =  $msgerror . "Contenido NO puede estar en Blanco <br>";
+    }
+    if (empty($noticia['fuente'])){
+        $msgerror =  $msgerror . "Fuente NO puede estar en Blanco <br>";
+    }
+    $year = substr($fecha, 0, 4);
+    if ($year < 1900 ){
+        $msgerror =  $msgerror .  "Año de Noticia, solo desde 1901 <br>";
+    }
+    if (!empty($msgerror)) {
+        echo " Error entontrados : <br> $msgerror ";
+
+    } else {
+
+        // Ruta donde se guardarán las imágenes que subamos
+        $directorio = $_SERVER['DOCUMENT_ROOT'].'/Proyectos/bitNews/Noticias/Imagenes/';
+        // Muevo la imagen desde el directorio temporal a nuestra ruta indicada anteriormente
+        move_uploaded_file($_FILES['imagen']['tmp_name'],$directorio.$imagen);
+
+
+        $sql="INSERT INTO noticias (titulo,imagen,contenido,fuente,urlN,fecha,ID_Usuario)
+        VALUES ('$noticia[titulo]','$imagen','$noticia[contenido]','$noticia[fuente]','$noticia[urlN]','$fecha','$ID_Usuario')";
+        
+        //El metodo mysqli_query envía los datos
+        //Necesita la conexion y sentencia SQL
+        $resultado=mysqli_query($conexion, $sql);
+        //Direccionamiento de rutas
+        header('Location: ./../index.php');
+    }
+
+
     
-    //El metodo mysqli_query envía los datos
-    //Necesita la conexion y sentencia SQL
-    $resultado=mysqli_query($conexion, $sql);
-    //Direccionamiento de rutas
-    header('Location: ./../index.php');
 
 ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-01-2020 a las 02:06:30
+-- Tiempo de generación: 24-01-2020 a las 16:26:05
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -45,7 +45,8 @@ CREATE TABLE `noticias` (
 --
 
 INSERT INTO `noticias` (`id`, `titulo`, `imagen`, `contenido`, `fuente`, `urlN`, `fecha`, `id_Usuario`, `editado`) VALUES
-(24, 'titulo3', 'libreta.png', '231231', '1231231', 'QWFRWEF123', '2020-01-01', 3, '2020-01-23 18:15:37');
+(25, 'qwertyuASDFGH', 'complejo-b-para-perros.png', 'werawe', 'sdfghjkhgfcxcvb', 'wewerwerw', '2020-01-02', 3, '2020-01-24 14:08:02'),
+(26, '1231231titulo', 'colores.png', 'srgeargae', 'greargearg', 'eargear', '2020-01-01', 3, '2020-01-24 15:12:00');
 
 -- --------------------------------------------------------
 
@@ -66,9 +67,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `contrasena`, `perfil`) VALUES
-(1, 'David Orjuela', 'davidorjuel@gmail.com', 'Geral2020', 'admin'),
-(2, 'Pepito Perez', 'pepito@correo.com', '123456', 'admin'),
-(3, 'a', 'a@a', 'a', 'admin');
+(3, 'a', 'a@a', 'a', 'admin'),
+(6, 'David', 'davidorjuel@gmail.com', '12345', 'editor'),
+(7, 'Nicolas', 'd@d', '12345', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -96,13 +97,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas

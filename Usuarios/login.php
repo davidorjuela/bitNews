@@ -31,6 +31,7 @@ if ($contrasena==$row['contrasena']) {
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $row['nombre'];
     $_SESSION['user_ID'] = $row['id'];
+    $_SESSION['perfil'] = $row['perfil'];
 
     echo "Bienvenido! " . $_SESSION['username'];
     header('Location: ./../index.php');//redirecciona a la pagina del usuario

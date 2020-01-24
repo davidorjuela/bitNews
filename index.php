@@ -14,8 +14,15 @@
     $nombres = mysqli_fetch_all($resultado);
    
     session_start();
+  
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         $sesion=true;
+        if ($_SESSION['perfil']=='admin') {
+          $sesionAdmin=true;
+        }
+        else{
+          $sesionAdmin=false;
+        }
     } else {
         $sesion=false;
         // echo "Inicia Sesion para acceder a este contenido.<br>";
@@ -53,6 +60,9 @@
         <div class="anclas">
           <?php if($sesion){
             echo '<li><a href="Usuarios/logout.php">Logout</a></li>';
+            if($sesionAdmin){
+              echo '<li><a href="Usuarios/Vistas/mostrar.php">Editores</a></li>';
+            }
           }else{
               echo '<li><a href="Usuarios/Vistas/registrar.php">Registro</a></li>';
               echo '<li><a href="Usuarios/Vistas/login.php">Login</a></li>';
@@ -204,15 +214,100 @@
     </Section>
   </main>
 
-  
-  <footer>
-    <section id="nosotros">
-    </section>
-    <section id="social">
-    </section>
-    <section id="copyright"></section>
+  <footer class="page-footer font-small blue pt-4">
 
-  </footer>
+  <!-- Footer Links -->
+  <div  id="fondodefooter" class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h3 class="text-uppercase">MÁS INFORMACION</h3>
+        <ul>
+                        <a class="normal" href="#" target="_blank">
+                            <li>Acerca de nosotros</li>
+                        </a>
+                        <a class="normal" href="#" target="_blank">
+                            <li>Terminos y condiciones</li>
+                        </a>
+                        <a class="normal" href="#" target="_blank">
+                            <li>Nuestros Aliados</li>
+                        </a>
+                    </ul>
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h3>LINKS DE INTERES</h3>
+                    <ul>
+                        <a class="normal" href="#" target="_blank">
+                            <li>Cotiza tu evento con nosotros</li>
+                        </a>
+                        <a class="normal" href="#" target="_blank">
+                            <li>Trabaja con nosotros</li>
+                        </a>
+                    </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h3>AYUDA</h3>
+                    <ul>
+                        <a class="normal" href="#" target="_blank">
+                            <li>Contáctanos: contacto@bitnews.com</li>
+                        </a>
+                        <a class="normal" href="#" target="_blank">
+                            <li>Llamanos al PBX 1-0844300</li>
+                        </a>
+                        <a class="normal" href="#" target="_blank">
+                            <li>Servicio al cliente</li>
+                        </a>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div id="redessociales" class="footer-copyright text-center py-3">
+    <a target="_blank" href="https://www.facebook.com/Bitnews-106115047603653/?modal=admin_todo_tour"> <img class="icon-redes"
+                                src="Imagenes/img8.png"></a>
+                        <a target="_blank" href="https://twitter.com/home?lang=es"><img class="icon-redes"
+                                src="Imagenes/img6.png"></a>
+                        <a target="_blank" href="https://twitter.com/home/?hl=es-la"><img class="icon-redes"
+                                src="Imagenes/img7.png"></a>
+                        <a target="_blank" href="https://www.instagram.com/?hl=es-la"><img class="icon-redes"
+                                src="Imagenes/img10.png"></a>
+                    <div class="footer-celular">
+                        <a class="icon-rede" href="#"><img src="Imagenes/img11.png" alt="play"></a>
+                        <a class="icon-rede" href="#"><img src="Imagenes/img12.png" alt="app"></a>
+                    </div>
+    <div class="fletrafooter">
+   <a href="#">BitNews</a>
+
+    </div>
+  
+  </div>
+  <!-- Copyright -->
+
+</footer>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

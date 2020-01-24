@@ -380,3 +380,47 @@ footer {
   border-radius: 10px; }
 
 /*# sourceMappingURL=style.css.map */
+
+.icon-redes{
+  width: 5%;
+  height: 5%;}
+.icon-redes:hover {
+  transform: scale(1.2);
+  transition: 230ms;
+}
+#fondodefooter{
+  width: 100%;
+  background-image: url(https://cdn.ticbeat.com/src/uploads/2018/03/personajes-tecnologia-fallecieron-2017-810x540.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff
+}
+#redessociales{
+  width: 100%;
+  background: rgba(5, 5, 5, 0.932);
+  border-top: 3px solid #fff;
+}
+.normal{
+  font-family: roboto;
+  color: white;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+li:hover {
+  color: rgb(2, 248, 236);
+}
+.footer-celular {
+  float: right;
+}
+.icon-rede{
+  width: 5%;
+  height: 5%;
+  /* padding-right:100% ; */
+}
+.fletrafooter{
+  padding-bottom: 30px;
+}
+

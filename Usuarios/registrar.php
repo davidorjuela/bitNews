@@ -36,7 +36,7 @@ require('../conexion.php');
  
  else{
 
- $query = "INSERT INTO usuarios (nombre, correo, contrasena, perfil) VALUES ('$usuario[nombre]', '$usuario[correo]', '$usuario[contrasena]', 'admin')";
+ $query = "INSERT INTO usuarios (nombre, correo, contrasena, perfil) VALUES ('$usuario[nombre]', '$usuario[correo]', '$usuario[contrasena]', '$usuario[perfil]')";
 
  if ($conexion->query($query) === TRUE) {
  // header('Location: http://localhost/Login/login.html');

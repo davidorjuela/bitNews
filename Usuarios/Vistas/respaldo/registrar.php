@@ -48,13 +48,6 @@ Apoyanos con tus visitas y comentarios en nuestras redes sociales para seguir av
         border-top:transparent; border-right:transparent; border-left:transparent; border-buttom:5px solid #0A2F37;margin-top:2%; width:60%; color:white; font-size:15px; ">
       </div>
     </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd" style="    color:rgba(241, 235, 235, 0.575) ; font-size:15px;">Perfil:</label>
-      <div class="col-sm-10">          
-        <input type="password" class="form-control" maxlength="30" id="perfil" placeholder="Ingresa tu perfil" name="user[perfil]" required style="background-color:#0A2F37;
-        border-top:transparent; border-right:transparent; border-left:transparent; border-buttom:5px solid #0A2F37;margin-top:2%; width:60%; color:white; font-size:15px; ">
-      </div>
-    </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <div class="checkbox">
