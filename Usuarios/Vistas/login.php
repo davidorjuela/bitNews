@@ -12,7 +12,7 @@ Apoyanos con tus visitas y comentarios en nuestras redes sociales para seguir av
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style>
-body {font-family: Arial, Helvetica, sans-serif; background-image: url("Imagenes/fondo.png");  }
+body {font-family: Arial, Helvetica, sans-serif; background-image: url("../Imagenes/fondo.png");  }
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -147,7 +147,7 @@ span.psw {
   <form class="modal-content animate" action="./../login.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="Imagenes/avatar.png" alt="Avatar" class="avatar">
+      <img src="../Imagenes/avatar.png" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
@@ -165,8 +165,8 @@ span.psw {
 
     <div class="container" style="background-color:#f1f1f1">
       
-      <button type="button" onclick="location.href='index.html'">Registrarse</button>
-      <span class="psw">Olvidé <a href="#">contraseña</a></span>
+      <button type="button" onclick="location.href='registrar.php'">Registrarse</button>
+      <span class="psw"><a href="#">Olvidé mi contraseña</a></span>
     </div>
   </form>
 </div>

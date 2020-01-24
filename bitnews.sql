@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-01-2020 a las 10:29:56
+-- Tiempo de generación: 24-01-2020 a las 02:06:30
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -45,11 +45,7 @@ CREATE TABLE `noticias` (
 --
 
 INSERT INTO `noticias` (`id`, `titulo`, `imagen`, `contenido`, `fuente`, `urlN`, `fecha`, `id_Usuario`, `editado`) VALUES
-(3, 'titulo38', 'mercadoDeFichajes.png', '231231', '1231231', 'QWFRWEF', '2019-01-01', 1, '2020-01-23 09:05:06'),
-(15, 'wefawefwef', 'cacerolazo.jpg', '231231', '', 'QWFRWEF', '2020-01-07', 1, '2020-01-23 09:04:32'),
-(16, 'wargawrg', 'topNews.png', 'qwq3RqrRQ3RQ3QQR', 'QR3R', '3rq3rq', '1970-01-01', 1, '2020-01-23 09:16:12'),
-(17, 'RQ3Q3RQ', 'paginasPopulares.png', '33RQ3', 'QWF<W', 'QRQ3RQ', '1970-01-01', 1, '2020-01-23 09:16:54'),
-(18, 'QWRQ3R', '1366_2000.jpg', 'FF<SFSE', '<SEFASGSGES', 'EGSGGESE', '2020-01-30', 1, '2020-01-23 09:17:35');
+(24, 'titulo3', 'libreta.png', '231231', '1231231', 'QWFRWEF123', '2020-01-01', 3, '2020-01-23 18:15:37');
 
 -- --------------------------------------------------------
 
@@ -70,7 +66,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `contrasena`, `perfil`) VALUES
-(1, 'David Orjuela', 'davidorjuel@gmail.com', 'Geral2020', 'admin');
+(1, 'David Orjuela', 'davidorjuel@gmail.com', 'Geral2020', 'admin'),
+(2, 'Pepito Perez', 'pepito@correo.com', '123456', 'admin'),
+(3, 'a', 'a@a', 'a', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -98,13 +96,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas

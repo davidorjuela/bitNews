@@ -49,7 +49,7 @@ Apoyanos con tus visitas y comentarios en nuestras redes sociales para seguir av
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-default">Crear</button>
-        <button type="button" class="btn btn-default" onclick="location.href='login.html'">Login</button>
+        <button type="button" class="btn btn-default" onclick="location.href='login.php'">Login</button>
       </div>
     </div>
    
